@@ -46,7 +46,7 @@ var init = function() {
         var color;
         color = 0xAD8B6F;
     }
-    geometry.colorsNeedUpdate = true; //*/
+    geometry.colorsNeedUpdate = true; 
 
     //create material
     var material = new THREE.MeshLambertMaterial({
@@ -86,7 +86,8 @@ var init = function() {
 
         canvas.className = "hero-mountains";
     
-    var mountainHolder = document.querySelector(".hero-mountain-holder");
+    const mountainHolder = document.querySelector(".hero-mountain-holder");
+    
     mountainHolder.appendChild(canvas);
 
     //create renderer
@@ -107,12 +108,12 @@ var init = function() {
     controls.minAzimuthAngle = 0;
 	controls.maxAzimuthAngle = 0;
     controls.noKeys = true;
-    document.body.addEventListener("mousedown", function(e) {
+    mountainHolder.addEventListener("mousedown", function(e) {
        controls.enabled = true;
     });
-    document.body.addEventListener("mouseup", function(e) {
+    mountainHolder.addEventListener("mouseup", function(e) {
         controls.enabled = false;
-    });//*/
+    });
 
     var render = function() {
 
@@ -143,3 +144,24 @@ var init = function() {
     animate();
 
 }();
+
+/*
+Copyright (c) 2022 by wretched (https://codepen.io/wrtchd/pen/YXGKrB)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
+and associated documentation files (the "Software"), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial 
+portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES 
+OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//*/
+
+/* 
+Many thanks to wretched for the forked portion of the code above. I learned a lot from picking it apart.
+–John
+//*/
